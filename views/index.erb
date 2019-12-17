@@ -6,6 +6,103 @@
     <link rel="stylesheet" href="/main.css">
   </head>
   <body>
-    <h1>Welcome to Mukete's Library</h1>
-  </body>
+<h1>welcome To Mukete's Fancy Bakery</h1>
+    <div class="container">
+
+      <div class="card-column column-0">
+        <div class="card card-color-0">
+          <div class="border"></div>
+
+          <img src="https://cookingwithkarli.com/wp-content/uploads/2018/12/twix-cookies-10-720x720.jpg" />
+
+      <div class="row">
+        <% @output.each do |item| %>
+             <div class="col-sm-4" >
+                 <div class="card2">
+                    <img class="" src=<%= item.image%> alt="Cookie">
+                     <!-- <div class="card-block"> -->
+                         <h4 class="card-title"><%= item.name%></h4>
+                         <p class="card-text">Price per item: <%= item.price%></p>
+                     <!-- </div> -->
+                 </div>
+             </div>
+             <% end %>
+      </div>
+          <!-- <h1>Hey now, you're an allstar</h1> -->
+
+        </div>
+        <div class="card card-color-2">
+          <div class="border"></div>
+          <img src="https://www.tasteofhome.com/wp-content/uploads/2018/05/Unicorn-Cake_EXPS_HCA18_223966_D02_22_2b.jpg" />
+          <div class="row">
+            <% @output.each do |item| %>
+                 <div class="col-sm-4" >
+                     <div class="card2">
+                        <img class="" src=<%= item.image%> alt="Cookie">
+                         <!-- <div class="card-block"> -->
+                             <h4 class="card-title"><%= item.name%></h4>
+                             <p class="card-text">Price per item: <%= item.price%></p>
+                         <!-- </div> -->
+                     </div>
+                 </div>
+                 <% end %>
+          </div>
+          <!-- <h1>Hey now, you're a rock star</h1> -->
+        </div>
+      </div>
+      <div class="card-column column-1">
+        <div class="card card-color-1">
+          <div class="border"></div>
+          <img src="https://livforcake.com/wp-content/uploads/2017/07/black-forest-cake-thumb.jpg" />
+          <div class="row">
+            <% @cakes.each do |item| %>
+                 <div class="col-sm-4" >
+                     <div class="card2">
+                        <img class="" src=<%= item.image%> alt="Cookie">
+                         <!-- <div class="card-block"> -->
+                             <h4 class="card-title"><%= item.name%></h4>
+                             <p class="card-text">Price per item: <%= item.price%></p>
+                         <!-- </div> -->
+                     </div>
+                 </div>
+                 <% end %>
+          </div>
+          <!-- <h1>Get your game on, go play</h1> -->
+        </div>
+        <div class="card card-color-3">
+          <div class="border"></div>
+          <img src="https://bakingamoment.com/wp-content/uploads/2014/05/IMG_7457-blueberry-muffin-recipe-square.jpg"" />
+          <div class="row">
+            <% @muffins.each do |item| %>
+                 <div class="col-sm-4" >
+                     <div class="card2">
+                        <img class="" src=<%= item.image%> alt="Cookie">
+                         <!-- <div class="card-block"> -->
+                             <h4 class="card-title"><%= item.name%></h4>
+                             <p class="card-text">Price per item: <%= item.price%></p>
+                         <!-- </div> -->
+                     </div>
+                 </div>
+                 <% end %>
+          </div>
+          <!-- <h1>Get the show on, get paid</h1> -->
+        </div>
+      </div>
+    </div>
+
+    <div id="cover" class="cover">   </div>
+
+    <div id="open-content" class="open-content">
+      <a href="#" id="close-content" class="close-content"><span class="x-1"></span><span class="x-2"></span></a>
+      <img id="open-content-image" src="" />
+      <div class="text" id="open-content-text">
+      </div>
+    </div>
+
+  <% @weather.each do |now| %>
+    <h2><%= now %></h2>
+    <% end %>
+
+  <script src="/main.js" charset="utf-8"></script>
+</body>
 </html>
