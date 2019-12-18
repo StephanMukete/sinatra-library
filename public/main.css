@@ -1,31 +1,26 @@
-/*
-** Layout, Text & Colors
-*/
 
 body {
   font-family: sans-serif;
   background: #150f21;
   font-size: 18px;
 }
-h1{
+h1, h2{
   font-family: fantasy;
   text-align: center;
   color: white;
 }
-
+.api {
+  margin-top: 300px;
+}
 p {
   line-height: 1.5;
 }
 
 .container {
-  /* max-width: 700px; */
   margin-top: 14%;
-  /* margin: 0 auto; */
 }
 .container img{
-  /* max-width: 700px; */
   margin-top: 28%;
-  /* margin: 0 auto; */
 }
 
 /* Cards */
@@ -42,11 +37,9 @@ p {
 
 .card {
   width: 92%;
-  /* max-width: 540px; */
   margin-left: auto;
   margin-right: auto;
   position: relative;
-  /* background: #EB5160; */
   color: #fff;
   cursor: pointer;
   margin-bottom: 300px;
@@ -65,7 +58,6 @@ p {
 
 .card h1 {
   position: relative;
-  /* padding: 190px 30px 100px 10px; */
   width: 90%;
 }
 
@@ -76,16 +68,6 @@ p {
   top: -78%;
   left: 3%;
 }
-/* .card-color-1 > img {
-  width: 90%;
-  height: 45%;
-  position: absolute;
-  top: -54%;
-  left: 3%;
-} */
-
-
-
 .card-color-0 {
   background-color: #EB5160;
   padding-bottom: 15%;
@@ -113,17 +95,10 @@ p {
   z-index: 100;
   transform-origin: 50% 50%;
 }
-/* .row{
-  margin-top: 10%;
-} */
-/* .card-block{
-  z-index: 2000;
-} */
 
 /* The open page content */
 .row img{
   padding-left: 4%;
-  /* padding-top: 5%; */
   width: 90%;
   height: 90%;
 }
@@ -156,7 +131,6 @@ p {
 }
 
 .open-content .text h1, .open-content .text p {
-  /* max-width: 700px; */
   margin-left: auto;
   margin-right: auto;
 }
@@ -272,10 +246,3 @@ p {
     margin-top: 40px;
   }
 }
-/* .card > img {
-  width: 90%;
-  height: 45%;
-  position: absolute;
-  top: -78%;
-  left: 3%;
-} */

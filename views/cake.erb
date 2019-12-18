@@ -6,25 +6,21 @@
     <title></title>
   </head>
   <body>
-<a href="">Home</a>
-<h1><%=@header %></h1>
-<div class="container">
-    <div class="row">
-      <a href="cookies">cookies</a>
-      <a href="cake">cake</a>
-      <a href="muffin">muffin</a>
-    <% @output.each do |item| %>
-        <div class="col-sm-4">
-            <div class="card2">
-                <img class="card-img-top img-fluid" src=<%= item.image%> alt="Cookie">
-                <div class="card-block">
-                    <h4 class="card-title"><%= item.name%></h4>
-                    <p class="card-text">Price per item: <%= item.price%></p>
-                </div>
-            </div>
-        </div>
-        <% end %>
-    </div>
-</div>
+  <h1><%=@header %></h1>
+  <div class="container">
+      <div class="row">
+      <% @output.each do |item| %>
+          <div class="col-sm-4">
+              <div class="card2">
+                  <img class="card-img-top img-fluid" src=<%= item.image%> alt="Cookie">
+                  <div class="card-block">
+                      <h4 class="card-title"><%= item.name%></h4>
+                      <p class="card-text">Price per item: <%= item.price%></p>
+                  </div>
+              </div>
+          </div>
+          <% end %>
+      </div>
+  </div>
   </body>
 </html>

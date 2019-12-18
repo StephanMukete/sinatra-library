@@ -21,36 +21,35 @@ muffin2 = Cake.new("Triple Chocolate", "$114", "https://hips.hearstapps.com/hmg-
 muffin3 = Cake.new("Triple Vanilla", "$139", 'https://bakingamoment.com/wp-content/uploads/2014/05/IMG_7457-blueberry-muffin-recipe-square.jpg')
 muffin4 = Cake.new("Lava Chocolate", "$128", "https://www.pumpkinnspice.com/wp-content/uploads/2019/06/apple-cinnamon-muffins-4.jpg")
 get '/' do
-  @header = "OUR COOKIES"
   @muffins = [muffin1, muffin2, muffin3, muffin4]
   @cookies = [cookie1, cookie2, cookie3, cookie4]
   @cakes = [cake1, cake2, cake3, cake4]
   @output = @cookies
-# url = URI("https://community-open-weather-map.p.rapidapi.com/find?type=link%252C%20accurate&units=imperial%252C%20metric&q=Bronx")
-#
-# http = Net::HTTP.new(url.host, url.port)
-# http.use_ssl = true
-# http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-#
-# request = Net::HTTP::Get.new(url)
-# request["x-rapidapi-host"] = 'community-open-weather-map.p.rapidapi.com'
-# request["x-rapidapi-key"] = 'f4e43664dbmshebeb71cc176c017p1dd944jsn64ac3e13994f'
-#
-# response = http.request(request)
-# @temp= JSON.parse(response.body)["list"][1]["main"]["temp"]
-# @wind= JSON.parse(response.body)["list"][1]["wind"]["speed"]
-# @rain= JSON.parse(response.body)["list"][1]["weather"][0]["description"]
-# @c = 45
-# @b = "hi: " + @c.to_s
-# puts @a
-# @weather = [@temp, @wind, @rain ]
-@weather = [3, 3, 5 ]
+url = URI("https://community-open-weather-map.p.rapidapi.com/find?type=link%252C%20accurate&units=imperial%252C%20metric&q=Bronx")
+
+http = Net::HTTP.new(url.host, url.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+request = Net::HTTP::Get.new(url)
+request["x-rapidapi-host"] = 'community-open-weather-map.p.rapidapi.com'
+request["x-rapidapi-key"] = ENV["API_ID"]
+
+response = http.request(request)
+@temp= JSON.parse(response.body)["list"][1]["main"]["temp"]
+@wind= JSON.parse(response.body)["list"][1]["wind"]["speed"]
+@rain= JSON.parse(response.body)["list"][1]["weather"][0]["description"]
+@temp1 = "Temperature in Fahrenheit: " + @temp.to_s
+@wind1 = "Wind Speed: " + @wind.to_s
+@rain1 = "Rain: " + @rain.to_s
+
+@weather = [@temp1, @wind1, @rain1 ]
+puts @weather
+# @weather = [3, 3, 5 ]
 erb :index
 end
 
-
 get '/cookies' do
-    @header = "OUR COOKIES"
     @cookies = [cookie1, cookie2, cookie3, cookie4]
     @output = @cookies
     erb :cookies
@@ -58,16 +57,12 @@ get '/cookies' do
  end
 
  get '/cake' do
-   @header = "OUR CAKES"
-
    @cakes = [cake1, cake2, cake3, cake4]
    @output=@cakes
    erb :cake
 end
 
-
 get '/muffin' do
-   @header = "OUR MUFFINS"
    @muffins = [muffin1, muffin2, muffin3, muffin4]
    @output=@muffins
    erb :muffin
